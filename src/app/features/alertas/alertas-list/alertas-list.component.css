@@ -1,0 +1,137 @@
+.alertas-card {
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.55), inset 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+.titulo {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #e6edf7;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.titulo .icon {
+  font-size: 22px;
+  color: var(--accent-1);
+}
+
+.empty {
+  margin: 16px 0 4px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(148, 163, 184, 0.08);
+  color: #cbd5e1;
+  text-align: center;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Tabla */
+.full-width-table {
+  width: 100%;
+  border-radius: 12px;
+  overflow-x: auto;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.45);
+  min-width: 600px;
+}
+
+.full-width-table th {
+  background: rgba(14, 165, 233, 0.15);
+  color: #f1f5f9;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.full-width-table td {
+  color: #f1f5f9;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 12px 16px;
+}
+
+.full-width-table tr {
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.full-width-table tr:hover {
+  background: rgba(14, 165, 233, 0.25);
+  transform: scale(1.01);
+}
+
+/* Estado */
+.activa,
+.inactiva {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.activa {
+  background-color: #22c55e33;
+  color: #22c55e;
+}
+
+.inactiva {
+  background-color: #ef444433;
+  color: #ef4444;
+}
+
+/* Botón de acción */
+.icon-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 8px;
+  padding: 6px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: scale(1.1);
+}
+
+.icon-btn.warn {
+  color: #ef4444;
+}
+
+/* Variables */
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 18px;
+  }
+
+  .full-width-table {
+    min-width: auto;
+    font-size: 13px;
+  }
+
+  .full-width-table th {
+    font-size: 11px;
+  }
+
+  .full-width-table td {
+    font-size: 13px;
+  }
+}

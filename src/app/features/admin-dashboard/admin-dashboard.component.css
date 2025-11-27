@@ -1,0 +1,9 @@
+.dashboard-container {
+  padding: 20px;
+}
+
+.stat-card {
+  text-align: center;
+  background: var(--panel-light-bg);
+  color: var(--text-dark);
+}

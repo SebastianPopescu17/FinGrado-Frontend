@@ -1,0 +1,44 @@
+<div class="alerta-card">
+  <h2 class="titulo">Crear Alerta</h2>
+
+  <form (ngSubmit)="crearAlerta()" #alertaForm="ngForm">
+    <div class="form-group">
+      <label for="tipo">Tipo de alerta <span class="required">*</span></label>
+      <select [(ngModel)]="tipo" name="tipo" id="tipo" required>
+        <option value="precio">Precio</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="condicion">Condición <span class="required">*</span></label>
+      <select [(ngModel)]="condicion" name="condicion" id="condicion" required>
+        <option value="mayor">Mayor que</option>
+        <option value="menor">Menor que</option>
+        <option value="igual">Igual a</option>
+        <option value="entre">Entre valores</option>
+      </select>
+    </div>
+    @if (condicion !== 'entre') {
+      <div class="form-group">
+        <label for="valor">Valor <span class="required">*</span></label>
+        <input type="number" [(ngModel)]="valor" name="valor" id="valor" required>
+      </div>
+    } @else {
+      <div class="form-row">
+        <div class="form-group half-width">
+          <label for="valorMin">Valor mínimo <span class="required">*</span></label>
+          <input type="number" [(ngModel)]="valorMin" name="valorMin" id="valorMin" required>
+        </div>
+
+        <div class="form-group half-width">
+          <label for="valorMax">Valor máximo <span class="required">*</span></label>
+          <input type="number" [(ngModel)]="valorMax" name="valorMax" id="valorMax" required>
+        </div>
+      </div>
+    }
+
+    <div class="acciones">
+      <button type="submit" class="btn btn-primary">Crear</button>
+      <button type="button" class="btn btn-warn" (click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
+</div>
