@@ -1,3 +1,9 @@
 [build]
-  command = "npm install --legacy-peer-deps && npm run build"
+  base = "frontend"
+  command = "npm install && ng build --configuration production"
   publish = "dist/frontend"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
