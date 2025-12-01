@@ -50,6 +50,12 @@ export class DashboardComponent {
       icon: 'account_balance_wallet',
     },
     {
+      title: 'Operaciones',
+      description: 'Registra compras, ventas y movimientos de tu cartera.',
+      href: '/cartera/operaciones',
+      icon: 'swap_horiz',
+    },
+    {
       title: 'Histórico',
       description: 'Visualiza tus posiciones pasadas de las empresas.',
       href: '/historico',

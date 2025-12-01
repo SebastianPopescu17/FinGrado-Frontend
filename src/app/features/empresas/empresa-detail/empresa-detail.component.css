@@ -25,37 +25,45 @@
   background: var(--panel-bg);
 }
 
-/* Botón 'volver' en la cabecera: fondo grisáceo y icono de flecha en rojo para buen contraste */
+
 .header-card button[mat-raised-button] {
-  background: var(--panel-bg);
+  background: linear-gradient(135deg, #1e293b, #334155);
   color: var(--text-main);
   min-width: 48px;
   width: 48px;
   height: 48px;
   padding: 0;
-  border-radius: 10px;
-  box-shadow: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.25s ease-in-out;
 }
 
 .header-card button[mat-raised-button] mat-icon,
 .header-card button[mat-raised-button] .mat-icon {
-  color: #ef4444 !important; /* rojo para la flecha */
-  font-size: 28px;
+  color: #ef4444 !important;
+  font-size: 26px;
+  transition: transform 0.25s ease-in-out, color 0.25s ease-in-out;
 }
 
 .header-card button[mat-raised-button]:hover {
-  background: rgba(255,255,255,0.03);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  background: linear-gradient(135deg, #334155, #475569);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.header-card button[mat-raised-button]:hover mat-icon {
+  transform: scale(1.15);
+  color: #f87171 !important;
 }
 
 .header-card button[mat-raised-button]:focus {
-  outline: 2px solid rgba(239,68,68,0.15);
-  outline-offset: 2px;
+  outline: 2px solid rgba(239,68,68,0.25);
+  outline-offset: 3px;
 }
+
 
 .titulo-empresa {
   flex: 1;
@@ -240,5 +248,114 @@
   box-shadow: 0 6px 18px rgba(0,0,0,0.4);
   background: var(--panel-bg);
 }
+
+
+@media (max-width: 600px) {
+  :host {
+    padding: 1rem;
+  }
+
+  .header-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  .titulo-empresa h2 {
+    font-size: 1.4rem;
+    text-align: left;
+  }
+
+  .titulo-empresa h3 {
+    font-size: 1rem;
+  }
+
+  .titulo-empresa small {
+    font-size: 0.75rem;
+  }
+
+  .precio {
+    font-size: 1.1rem;
+  }
+
+  .saldo {
+    font-size: 0.9rem;
+  }
+
+  .acciones-empresa {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+  }
+
+  .acciones-empresa button {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .empresa-tabs {
+    margin-top: 1rem;
+  }
+
+  .contenido-tab {
+    padding: 1rem;
+  }
+
+  .indicadores-table th,
+  .indicadores-table td {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  :host {
+    padding: 1.5rem;
+  }
+
+  .header-card {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+
+  .titulo-empresa h2 {
+    font-size: 1.6rem;
+  }
+
+  .titulo-empresa h3 {
+    font-size: 1.1rem;
+  }
+
+  .precio {
+    font-size: 1.2rem;
+  }
+
+  .acciones-empresa {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .acciones-empresa button {
+    flex: 1 1 45%;
+    min-width: 140px;
+  }
+
+  .contenido-tab {
+    padding: 1.2rem;
+  }
+
+  .indicadores-table th,
+  .indicadores-table td {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+  }
+}
+
+
+
 
 

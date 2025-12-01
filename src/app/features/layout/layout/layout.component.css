@@ -185,10 +185,11 @@
   display: none;
 }
 
-app-dashboard, app-empresas, app-watchlist, app-alertas, app-noticias, app-macros, app-calculadora, app-cartera, app-saldo, app-admin {
+app-dashboard, app-empresas, app-watchlist, app-alertas, app-noticias, app-macros, app-calculadora, app-cartera, app-saldo, app-admin, app-operaciones {
   margin: 0;
   padding: 0;
   width: 100%;
+  height: 100%
 }
 
 @keyframes fadeIn {
@@ -199,4 +200,134 @@ app-dashboard, app-empresas, app-watchlist, app-alertas, app-noticias, app-macro
 @keyframes fadeInDown {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 600px) {
+  .layout-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.5rem;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.4);
+    z-index: 20;
+  }
+
+  .sidebar.collapsed {
+    width: 100%;
+  }
+
+  .sidebar .logo {
+    display: none;
+  }
+
+  .sidebar .menu {
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-top: 0;
+  }
+
+
+  .sidebar .menu a span {
+    display: none;
+  }
+
+
+  .user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.5rem;
+  }
+
+  .username {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #f1f5f9;
+  }
+
+  .user-info button[color="warn"] {
+    background: linear-gradient(90deg, #ef4444, #dc2626);
+    color: #fff !important;
+    border: none;
+    font-weight: 700;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(220,38,38,0.5);
+    transition: all 0.3s ease;
+  }
+
+  .user-info button[color="warn"]:hover {
+    background: linear-gradient(90deg, #b91c1c, #dc2626);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 16px rgba(220,38,38,0.7);
+  }
+
+  .main {
+    flex: none;
+    width: 100%;
+    margin-bottom: 64px;
+  }
+
+  .navbar {
+    height: 56px;
+    padding: 0 1rem;
+  }
+}
+
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar.collapsed {
+    width: 70px;
+  }
+
+  .sidebar .logo {
+    font-size: 1.1rem;
+    padding: 1rem;
+  }
+
+  .navbar {
+    height: 60px;
+    padding: 0 1rem;
+  }
+
+  .username {
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (min-width: 1025px) {
+  .sidebar {
+    width: 240px;
+  }
+
+  .sidebar.collapsed {
+    width: 80px;
+  }
+
+  .navbar {
+    height: 64px;
+    padding: 0 1.5rem;
+  }
+
+  .username {
+    font-size: 1rem;
+  }
 }
